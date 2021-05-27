@@ -12,4 +12,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
   })
 );
 
+// Admin page
+
+
 module.exports = router;
