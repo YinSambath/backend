@@ -4,8 +4,18 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
+const routes = require('./routes/index');
+const path = require('path');
+
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'public')))
+
+
+
+
+app.use(routes);
+
 
 // Passport Config
 require('./config/passport')(passport);
@@ -23,9 +33,9 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-// EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+app.set('views', 'views')
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -39,12 +49,12 @@ app.use(
   })
 );
 
+// Connect flash
+app.use(flash());
+
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Connect flash
-app.use(flash());
 
 // Global variables
 app.use(function(req, res, next) {
@@ -54,11 +64,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-// Routes
-app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
-
-
 
 const PORT = process.env.PORT || 5000;
 

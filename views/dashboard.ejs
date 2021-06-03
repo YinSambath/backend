@@ -1,16 +1,19 @@
+<div class="logout">
+  <a href="http://localhost:5000/users/logout"> log out</a>
+</div>
 
 
 
-<!DOCTYPE html> 
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Document</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Assets/stylesheet_layout/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -27,13 +30,15 @@
         <div class="navbar-links">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="/users/logout">Log out</a></li>
-            <li><a href="#">Log in</a></li>
+            <li><a href="http://localhost:5000/users/login">About</a></li>
+            <li><a href="http://localhost:5000/users/register">Sign up</a></li>
+            <li><a href="http://localhost:5000/users/login">Log in</a></li>
             <div class="search-container">
                 <form action="/action_page.php">
                   <input type="text" placeholder="Search.." name="search">
-                  <button type="submit"><i class="fa fa-search"></i></button>
+                  <a href="http://localhost:5000/users/login">
+                    <button type="submit" ><i class="fa fa-search"></i></button>
+                  </a>
                 </form>
             </div>
           </ul>
@@ -43,17 +48,18 @@
        
 
       <div class="container mt-5">
-        <h2 class="text-center">Bootstrap movie cards</h2>
+        
         <div class="row justify-content-center">
       
           <div class="card movie_card">
-            <img src="./Assets/img1.jpg" class="card-img-top" alt="...">
+            <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
       
-            <a href="https://www.google.com">
+            
               <div class="card-body">
+                <a href="http://localhost:5000/users/login">
                   <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer" >
                   </i>
-            </a>
+                </a>
                   <h5 class="card-title">Hamilton</h5>
                     <span class="movie_info">2019</span>
                     <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
@@ -62,33 +68,42 @@
            
           </div>
       
-              <div class="card movie_card">
-            <img src="./Assets/img2.jpg" class="card-img-top" alt="...">
+          <div class="card movie_card">
+            <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
+            
             <div class="card-body">
-              <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
+              <a href="https://www.google.com">
+                <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                </i>
+              </a>
+              
               <h5 class="card-title">Toy Story 4</h5>
                 <span class="movie_info">2019</span>
                 <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
             </div>
           </div>
       
-              <div class="card movie_card">
-            <img src="./Assets/img3.jpeg" class="card-img-top" alt="...">
+          <div class="card movie_card">
+            <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
+              <a href="https://www.google.com">
+                <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                </i>
+              </a>
               <h5 class="card-title">Captain Marvel</h5>
                 <span class="movie_info">2019</span>
                 <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
             </div>
           </div>
       
-              <div class="card movie_card">
-            <img src="./Assets/img4.jpg" class="card-img-top" alt="...">
+          <div class="card movie_card">
+            <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
+            
             <div class="card-body">
-              <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
+              <a href="https://www.google.com">
+                <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                </i>
+              </a>
               <h5 class="card-title">Spider-Man: Far From Home</h5>
                 <span class="movie_info">2019</span>
                 <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
@@ -96,10 +111,12 @@
           </div>
       
           <div class="card movie_card">
-            <img src="./Assets/img5.jpg" class="card-img-top" alt="...">
+            <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
+              <a href="https://www.google.com">
+                <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                </i>
+              </a>
               <h5 class="card-title">Alita: Battle Angel</h5>
                 <span class="movie_info">2019</span>
                 <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
@@ -107,10 +124,13 @@
           </div>
       
           <div class="card movie_card">
-            <img src="./Assets/img6.jpg" class="card-img-top" alt="...">
+            <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
+
             <div class="card-body">
-              <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-              </i>
+              <a href="https://www.google.com">
+                <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                </i>
+              </a>
               <h5 class="card-title">Spider-Man: Into the Spider-Verse</h5>
                 <span class="movie_info">2019</span>
                 <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
@@ -118,21 +138,25 @@
           </div>
       
           <div class="card movie_card">
-              <img src="./Assets/img6.jpg" class="card-img-top" alt="...">
+              <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-                </i>
+                <a href="https://www.google.com">
+                  <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                  </i>
+                </a>
                 <h5 class="card-title">Spider-Man: Into the Spider-Verse</h5>
                   <span class="movie_info">2019</span>
                   <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
               </div>
-            </div>
+          </div>
       
             <div class="card movie_card">
-              <img src="./Assets/img6.jpg" class="card-img-top" alt="...">
+              <img src="../Assets/Image/img1.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-                </i>
+                <a href="https://www.google.com">
+                  <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                  </i>
+                </a>
                 <h5 class="card-title">Spider-Man: Into the Spider-Verse</h5>
                   <span class="movie_info">2019</span>
                   <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
@@ -145,9 +169,9 @@
       
             
       </div>
-      <script type="text/javascript" src="script.js"></script>
+      <script type="text/javascript" src="../Assets/stylesheet_layout/script.js"></script>
 
-      //Body page script 
+      
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -155,4 +179,4 @@
 
 
 </body>
-</html>
+</html> -->
