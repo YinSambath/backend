@@ -11,14 +11,28 @@ const path = require('path');
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')))
 
-
-
-
-app.use(routes);
-
-
 // Passport Config
 require('./config/passport')(passport);
+
+// Express session
+app.use(
+  session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false
+  })
+);
+// Express body parser
+app.use(express.urlencoded({ extended: true }));
+
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect flash
+app.use(flash());
+app.use(routes);
 
 // DB Config
 const db = require('./config/keys').mongoURI;
@@ -33,28 +47,15 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-app.use(expressLayouts);
-app.set('view engine', 'ejs');
-app.set('views', 'views')
+  app.use(expressLayouts);
+  app.set('view engine', 'ejs');
+  app.set('views', 'views')
 
-// Express body parser
-app.use(express.urlencoded({ extended: true }));
-
-// Express session
-app.use(
-  session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-  })
-);
-
-// Connect flash
-app.use(flash());
-
-// Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
+  // using the custom middleware for storing variable in response
+// app.use((req, res, next) => {
+//   res.locals.isAuthenticated = req.isAuthenticated()
+//   next()
+// })
 
 // Global variables
 app.use(function(req, res, next) {
@@ -64,7 +65,13 @@ app.use(function(req, res, next) {
   next();
 });
 
+
 app.use('/users', require('./routes/users.js'));
+
+
+
+
+
 
 const PORT = process.env.PORT || 5000;
 
