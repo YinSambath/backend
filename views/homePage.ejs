@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homepage Movie </title>
     <link rel="stylesheet" href="../Assets/stylesheet_layout/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -23,7 +23,11 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
+            <li><a href=""><%= user.name%></a></li>
             <li><a href="http://localhost:5000/users/logout">Log out</a></li>
+            
+            
+            
             
             <div class="search-container">
                 <form action="/action_page.php">
@@ -36,7 +40,14 @@
           </ul>
         </div>
       </nav>
+      
+      <!-- create movie -->
 
+      <!-- <div class="create_movie">
+        <form action="create-movie">
+          <button type="submit">Create movie</button>
+        </form>
+      </div> -->
        
 
       <div class="container mt-5">
@@ -48,7 +59,7 @@
       
             
               <div class="card-body">
-                <a href="https://www.google.com">
+                <a href="http://localhost:5000/movie-detail">
                   <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer" >
                   </i>
                 </a>

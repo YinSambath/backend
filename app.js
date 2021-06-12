@@ -1,16 +1,34 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const multer = require('multer');
+const color = require('colors')
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const routes = require('./routes/index');
+
+
+
+// const movieDetailRouter = require('./routes/movieDetail');
 const path = require('path');
 
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')))
 
+// storage image
+const storage = multer.diskStorage({ 
+  destination: (req, res, cb) => {
+    cb(null, 'upload')
+  },
+  filename: (req, res, cb) => {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+})
+const upload = multer({ storage: storage});
 // Passport Config
 require('./config/passport')(passport);
 
@@ -26,9 +44,11 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 
 
+
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Connect flash
 app.use(flash());
@@ -65,8 +85,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+app.use('/', require('./routes/Admin'));
 app.use('/users', require('./routes/users.js'));
+app.use('/', require('./routes/createMovie'));
 
 
 
