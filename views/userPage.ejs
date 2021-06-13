@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../Assets/stylesheet_layout/styleAdmin.css">
+    <script src="https://kit.fontawesome.com/a15a5a5781.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar" >
+        <div class="brand-title">Palace Cinema</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="#"><i class="far fa-user-circle"></i></a></li>
+            <li><a href="#">name-user</a></li>
+            <li><a href="#">Log out</a></li>
+            
+          </ul>
+        </div>
+    </nav>
+
+    <div class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1" >
+
+            <a href="/admin">
+            <button style="width:100%; height:50px;">Movie</button>
+            </a>
+
+            <a href="/admin/users">
+            <button style="width:100%; height:50px;">User</button>
+            </a>  
+
+            <a href="/admin/create-movie">
+            <button style="width:100%; height:50px;">Upload Movie</button>
+            </a>
+            
+            
+        </div>
+        <div class="flexbox-item flexbox-item-2">
+            <table class="table">
+                <thead>
+                    <th>ID</th>
+                    <th>Username</th>
+                    
+                    <th>Email</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <% users.forEach(function(user) { %>
+                    <tr>
+                        <td data-label="ID"></td>
+                        <td data-label="Username"> <%= user.name%></td>
+                        <td data-label="Email"><%= user.email%></td>
+                        
+                        <td data-label="Action">
+                            <i class="fas fa-edit"></i>
+                            &nbsp;&nbsp;&nbsp;
+                            <i class="fas fa-trash"></i>
+                        </td>
+                    </tr>              
+                    <% }); %>
+                </tbody>
+                
+          </table>
+            
+
+
+
+        </div>
+    
+    
+    </div>
+    
+    <script type="text/javascript" src="../Assets/stylesheet_layout/script.js"></script>
+
+</body>
+</html>
