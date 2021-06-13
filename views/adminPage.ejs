@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-    <link rel="stylesheet" href="../Assets/styleAdmin/style.css">
+    <link rel="stylesheet" href="../Assets/stylesheet_layout/styleAdmin.css">
     <script src="https://kit.fontawesome.com/a15a5a5781.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -19,8 +19,9 @@
         </a>
         <div class="navbar-links">
           <ul>
-            <i class="far fa-user-circle"></i>
-            
+            <li><a href="#"><i class="far fa-user-circle"></i></a></li>
+            <li><a href="#">name-user</a></li>
+            <li><a href="#">Log out</a></li>
             
           </ul>
         </div>
@@ -33,7 +34,7 @@
             <a href="users.html">
             <button style="width:100%; height:50px;">Users</button>
             </a>  
-            <a href="uploadmovie.html">
+            <a href="/admin/create-movie">
             <button style="width:100%; height:50px;">Upload Movie</button>
             </a>
             
@@ -63,7 +64,7 @@
 
                     <tr>
                         <td data-label="ID">2</td>
-                        <td data-label="Title">Avenger</td>
+                        <td data-label="Title"></td>
                         <td data-label="Genre">Fighting</td>
                         <td data-label="Rating">4 <i class="fas fa-star"></i></td>
                         <td data-label="Action">
@@ -108,8 +109,7 @@
     </div>
     
 
-    <script type="text/javascript" src="../Assets/styleAdmin/script.js">
-        
-    </script>
+    <script type="text/javascript" src="../Assets/stylesheet_layout/script.js"></script>
+
 </body>
 </html>

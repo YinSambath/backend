@@ -4,11 +4,11 @@ const router = express.Router();
 const Movie = require('../models/movie')
 
 
-router.get('/create-movie', (req,res) => {
+router.get('/admin/create-movie', (req,res) => {
     res.render('createMovie')
 });
 
-router.post('/create-movie', (req,res) => {
+router.post('/admin/create-movie', (req,res) => {
     const {title, description, image, genre} = req.body;
     let errors = [];
 

@@ -13,8 +13,7 @@ router.get('/user/home-page', ensureAuthenticated, (req, res) => {
     res.render('homePage', {
       user: req.user
     })
-  }
-);
+});
 
 
 // movie_detail
