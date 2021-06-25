@@ -10,9 +10,6 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const routes = require('./routes/index');
 
-
-
-// const movieDetailRouter = require('./routes/movieDetail');
 const path = require('path');
 
 
